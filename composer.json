@@ -1,0 +1,20 @@
+{
+    "name": "jukuan/phps3admin",
+    "autoload": {
+        "psr-4": {
+            "Jukuan\\Phps3admin\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Juljan M.",
+            "email": "y.misiukevich@gmail.com"
+        }
+    ],
+    "require": {
+        "aws/aws-sdk-php": "^3.339"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^7.2"
+    }
+}
