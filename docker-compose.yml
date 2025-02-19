@@ -1,0 +1,27 @@
+services:
+  php:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    container_name: php
+    hostname: ps3a-php
+    volumes:
+      - ./:/var/www/html
+    networks:
+      - ps3a-network
+
+  nginx:
+    image: nginx:1.27-alpine
+    container_name: nginx
+    hostname: ps3a-nginx
+    volumes:
+      - ./public:/var/www/html
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "8283:80"
+    networks:
+      - ps3a-network
+
+networks:
+  ps3a-network:
+    driver: bridge

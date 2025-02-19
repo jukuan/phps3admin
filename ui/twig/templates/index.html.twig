@@ -1,0 +1,32 @@
+{% extends "layout/base.html.twig" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block content %}
+    <div class="px-4 py-5 my-5 text-center">
+        <div class="d-block mx-auto mb-4">
+            {{ logo(72)|raw }}
+        </div>
+
+        <h1 class="display-5 fw-bold text-body-emphasis">
+            Php S3 Admin
+        </h1>
+
+        <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">
+                PhpS3Admin is a small web-based S3 explorer designed for easy and efficient management of any S3 storage.
+                It provides a basic interface to navigate your S3 buckets and objects.
+            </p>
+            <p>
+                This project is open source, and contributions are welcome.
+                Feel free to contribute and help improve PhpS3Admin!
+            </p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <a href="{{ toBucket('') }}" class="btn btn-primary btn-lg px-4 gap-3">Buckets</a>
+                <a href="https://github.com/jukuan/phps3admin" class="btn btn-outline-secondary btn-lg px-4">GitHub</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

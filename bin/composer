@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+if [ $# -lt 1 ]; then
+    echo "Please provide at least one argument: command."
+    echo "For example: $ ./bin/composer install"
+    exit 1
+fi
+
+command="$1"
+arguments="$2"
+
+echo "${GOOD}======== Executing composer command ========${NORMAL}"
+
+if [ $# -eq 1 ]; then
+    docker-compose exec php composer "$command"
+else
+    docker-compose exec php "$command" "$arguments"
+fi
+
+echo "${GOOD}======== Done! ========${NORMAL}"

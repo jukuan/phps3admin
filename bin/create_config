@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Check if three arguments are provided
+if [ "$#" -ne 3 ]; then
+    echo "Usage: $0 <AccessKey> <SecretKey> <URL>"
+    exit 1
+fi
+
+# Assign parameters to variables
+ACCESS_KEY=$1
+SECRET_KEY=$2
+URL=$3
+
+# Create .ini file
+INI_FILE="config.ini"
+
+# Write to .ini file
+cat <<EOL > $INI_FILE
+[Credentials]
+access_key = $ACCESS_KEY
+secret_key = $SECRET_KEY
+
+[Server]
+host_base = $URL
+EOL
+
+echo ".ini file '$INI_FILE' generated successfully."
